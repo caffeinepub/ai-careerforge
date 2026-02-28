@@ -1,0 +1,190 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-27T17:30:58.179Z",
+  "summary": "The diff implements a substantial portion of the NEXUS portfolio requirements, including most frontend sections, the Motoko backend, accessibility settings, custom cursor, and the visual theme. However, several specific acceptance criteria are missing or only partially implemented, and the Motoko backend has structural issues relative to the spec. Several advanced animation requirements are simplified or absent.",
+  "missing_requirements": [
+    {
+      "requirement": "Particle system in preloader animates and converges into a recognizable human silhouette shape on page load; particles react to mouse movement",
+      "reason": "The Preloader component is referenced in App.tsx but its implementation file is omitted from the diff. No evidence of a WebGL/canvas particle system assembling into a human silhouette or mouse-reactive particles is visible.",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "requirement": "Hovering the name card triggers a fragment-scatter and reassembly animation",
+      "reason": "Hero.tsx shows fragments appearing on hover as absolutely-positioned divs with random inline styles, but there is no scatter-then-reassemble animation sequence. The reassembly part is absent.",
+      "evidence": [
+        "frontend/src/components/Hero.tsx"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "requirement": "Milestone text types in character-by-character when the card enters view; designated keywords display a glitch animation",
+      "reason": "FlipCard.tsx renders milestone text statically with no typewriter character-by-character animation and no glitch effect on keywords.",
+      "evidence": [
+        "frontend/src/components/FlipCard.tsx"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "requirement": "Section background hue transitions from dark/deep space through neutral light to neon as the user scrolls through the timeline; vertical scroll drives horizontal timeline movement",
+      "reason": "Timeline.tsx is not included in the diff. No evidence of scroll-driven horizontal movement or three-phase background color transitions is visible.",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "requirement": "Three.js sphere lattice of interconnected skill nodes that auto-rotates, is mouse-draggable, highlights connecting lines on node hover, and displays floating badge labels with glow/shader effect",
+      "reason": "Skills.tsx is referenced but not included in the diff. GlobeScene.tsx is used for Achievements only. No skill node globe implementation is visible.",
+      "evidence": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/GlobeScene.tsx"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "requirement": "Project cards tilt/rotate on scroll with inertia easing; hovering shows holographic wireframe overlay; clicking triggers expand-morph to fill viewport; section background shifts by closest card; cursor changes to scanning beam over cards",
+      "reason": "Projects.tsx is referenced but not included in the diff. No implementation evidence is available for any of these behaviors.",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "requirement": "AI art gallery frames float with subtle idle animation and smoothly rearrange layout on hover using physics animation",
+      "reason": "AIArtGallery.tsx uses simple CSS scale/rotate transforms on hover with no physics-based rearrangement or spring physics for position changes.",
+      "evidence": [
+        "frontend/src/components/AIArtGallery.tsx"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "requirement": "Scroll-triggered animation zooms the camera toward the globe on section entry",
+      "reason": "GlobeScene.tsx has a static camera position at [0,0,6] with no scroll-triggered camera zoom animation.",
+      "evidence": [
+        "frontend/src/components/GlobeScene.tsx"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "requirement": "Glassmorphism tooltip panel includes project name, description, and animated stat numbers counting up",
+      "reason": "AchievementTooltip only shows label and a stat number with count-up. The ImpactPoint type has no description field and the full project description is absent.",
+      "evidence": [
+        "frontend/src/components/GlobeScene.tsx",
+        "frontend/src/components/AchievementTooltip.tsx"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "requirement": "When cursor approaches the center of the contact scene, a contact form animates into view with particle effects suggesting form fields assembling from particles",
+      "reason": "ContactForm.tsx uses a simple opacity/translate fade-in triggered by a 300ms setTimeout, not cursor-proximity detection. No particle effects assemble the form fields.",
+      "evidence": [
+        "frontend/src/components/ContactForm.tsx",
+        "frontend/src/components/Contact.tsx"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "requirement": "Three parallax layers scroll at visually distinct speeds within all sections (background 0.2x, midground 0.5x, foreground 1x)",
+      "reason": "The Hero section has mouse-based parallax on three layers, but scroll-based three-layer parallax within other sections is not evidenced in the visible component files.",
+      "evidence": [
+        "frontend/src/components/Hero.tsx"
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "requirement": "Motoko actor stores student data as stable actor state; individual query functions return each data category as structured types",
+      "reason": "backend/main.mo uses a non-stable empty Map with no pre-populated data and no stable keyword. There are no per-category query functions (e.g., getTimeline, getSkills). Only a generic getStudent(id) exists.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "requirement": "Frontend fetches and renders data from the backend rather than using only hardcoded values",
+      "reason": "App.tsx uses DEFAULT_STUDENT as fallback via student ?? DEFAULT_STUDENT. The useQueries implementation is not in the diff. It is unclear whether a genuine canister fetch is performed.",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    },
+    {
+      "requirement": "All six required static image assets must be served from frontend/public/assets/generated",
+      "reason": "Images are referenced in component code but no image files appear as added files in the diff under frontend/public/assets/generated.",
+      "evidence": [
+        "frontend/src/components/AISandbox.tsx",
+        "frontend/src/components/AIArtGallery.tsx",
+        "frontend/src/components/Hero.tsx"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "A caffeine.ai attribution link in the Footer component",
+      "reason": "The build request does not mention a footer with caffeine.ai branding or any attribution link. This was not requested.",
+      "evidence": [
+        "frontend/src/components/Footer.tsx"
+      ]
+    },
+    {
+      "description": "Multi-student Map storage in Motoko backend with getAllStudents and getStudentRecordKey query functions",
+      "reason": "The build request specifies storing a single student's portfolio data. The implementation creates a multi-principal student map with getAllStudents and getStudentRecordKey, which were not requested.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "Recharts 2D bar chart used for GrowthPredictor instead of a 3D animated bar/line graph",
+      "reason": "REQ-6 specifies a 3D animated bar/line graph for the growth predictor. The implementation uses Recharts, a 2D SVG chart library, which does not satisfy the 3D requirement.",
+      "evidence": [
+        "frontend/src/components/GrowthPredictor.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.62,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/AIArtGallery.tsx",
+    "frontend/src/components/AISandbox.tsx",
+    "frontend/src/components/AccessibilitySettings.tsx",
+    "frontend/src/components/AchievementTooltip.tsx",
+    "frontend/src/components/Achievements.tsx",
+    "frontend/src/components/ChatPanel.tsx",
+    "frontend/src/components/CodeParticles.tsx",
+    "frontend/src/components/Contact.tsx",
+    "frontend/src/components/ContactForm.tsx",
+    "frontend/src/components/CustomCursor.tsx",
+    "frontend/src/components/FlipCard.tsx",
+    "frontend/src/components/Footer.tsx",
+    "frontend/src/components/GlobeScene.tsx",
+    "frontend/src/components/GrowthPredictor.tsx",
+    "frontend/src/components/Hero.tsx",
+    "frontend/src/components/HeroGrid.tsx",
+    "frontend/src/components/MagneticButton.tsx",
+    "frontend/src/components/OrbitingIcons.tsx",
+    "frontend/src/components/Preloader.tsx",
+    "frontend/src/components/ProjectCard.tsx",
+    "frontend/src/components/Projects.tsx",
+    "frontend/src/components/SkillGlobe.tsx",
+    "frontend/src/components/Skills.tsx",
+    "frontend/src/components/Timeline.tsx",
+    "frontend/src/components/VoiceInput.tsx",
+    "frontend/src/hooks/useAccessibility.ts",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useCursorContext.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/hooks/useScrollAnimation.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

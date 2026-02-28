@@ -1,0 +1,266 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-implement-an-animated-preloader-the-awakening-with-a-webgl-canvas-particle-system-that-assembles-into-a-human-silhouette-shape-followed-by-a-fade-out-reveal-after-loading-completes-display-a-greeting-message-that-changes-based-on-the-time-of-day-e-g-good-morning-good-evening-particles-must-respond-to-mouse-movement-during-the-preloader-phase",
+      "featureTitle": "Implement an animated preloader ('The Awakening') with a WebGL/canvas particle system that assembles into a human silhouette shape, followed by a fade-out reveal. After loading completes, display a greeting message that changes based on the time of day (e.g., 'Good morning', 'Good evening'). Particles must respond to mouse movement during the preloader phase.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Preloader.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-hero-section-reality-shift-with-a-three-js-infinite-3d-perspective-grid-extending-to-the-horizon-floating-semi-transparent-mathematical-formula-labels-in-3d-space-a-glassmorphism-card-displaying-the-student-s-name-that-visually-fragments-and-reassembles-on-hover-animated-gradient-text-that-follows-cursor-position-magnetic-cta-buttons-that-visually-lean-toward-the-cursor-and-three-parallax-depth-layers-deep-space-background-floating-3d-objects-foreground-text-content",
+      "featureTitle": "Build the Hero section ('Reality Shift') with a Three.js infinite 3D perspective grid extending to the horizon, floating semi-transparent mathematical formula labels in 3D space, a glassmorphism card displaying the student's name that visually fragments and reassembles on hover, animated gradient text that follows cursor position, magnetic CTA buttons that visually lean toward the cursor, and three parallax depth layers (deep space background, floating 3D objects, foreground text content).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Hero.tsx",
+        "frontend/src/components/HeroGrid.tsx",
+        "frontend/src/components/MagneticButton.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-the-consciousness-stream-about-timeline-section-with-a-horizontally-scrolling-timeline-driven-by-vertical-scroll-input-via-smooth-scroll-each-milestone-is-a-3d-flip-card-front-date-and-title-back-achievement-detail-background-hue-transitions-from-dark-deep-space-through-neutral-light-to-neon-as-the-user-progresses-key-words-in-milestone-text-animate-in-character-by-character-with-a-digital-glitch-effect-on-highlighted-keywords",
+      "featureTitle": "Create the 'Consciousness Stream' About/Timeline section with a horizontally-scrolling timeline driven by vertical scroll input (via smooth scroll). Each milestone is a 3D flip card (front: date and title; back: achievement detail). Background hue transitions from dark/deep space through neutral light to neon as the user progresses. Key words in milestone text animate in character-by-character with a digital glitch effect on highlighted keywords.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/FlipCard.tsx",
+        "frontend/src/components/Timeline.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-digital-nexus-skills-section-featuring-a-three-js-3d-rotating-globe-composed-of-interconnected-skill-nodes-hovering-a-node-highlights-its-connections-to-related-skill-nodes-with-animated-lines-each-node-is-labeled-with-a-skill-name-and-displays-a-floating-badge-with-a-webgl-shader-style-glow-effect-the-section-background-contains-an-animated-particle-field-where-each-particle-visually-resembles-a-short-code-snippet-or-character",
+      "featureTitle": "Build the 'Digital Nexus' Skills section featuring a Three.js 3D rotating globe composed of interconnected skill nodes. Hovering a node highlights its connections to related skill nodes with animated lines. Each node is labeled with a skill name and displays a floating badge with a WebGL/shader-style glow effect. The section background contains an animated particle field where each particle visually resembles a short code snippet or character.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/CodeParticles.tsx",
+        "frontend/src/components/SkillGlobe.tsx",
+        "frontend/src/components/Skills.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-the-lab-projects-gallery-with-project-cards-rendered-in-a-3d-perspective-space-cards-tilt-rotate-as-the-user-scrolls-with-inertia-easing-hovering-a-card-shows-a-holographic-style-animated-preview-overlay-simulated-3d-wireframe-or-animated-mockup-clicking-a-card-triggers-an-expand-morph-transition-where-the-card-grows-to-fill-the-viewport-revealing-full-project-details-the-section-background-color-shifts-dynamically-based-on-which-project-card-is-closest-to-center-the-cursor-changes-to-a-scanning-beam-style-when-hovering-over-project-cards",
+      "featureTitle": "Implement 'The Lab' Projects Gallery with project cards rendered in a 3D perspective space. Cards tilt/rotate as the user scrolls, with inertia easing. Hovering a card shows a holographic-style animated preview overlay (simulated 3D wireframe or animated mockup). Clicking a card triggers an expand morph transition where the card grows to fill the viewport revealing full project details. The section background color shifts dynamically based on which project card is closest to center. The cursor changes to a scanning beam style when hovering over project cards.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/ProjectCard.tsx",
+        "frontend/src/components/Projects.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-ai-sandbox-interactive-zone-with-1-a-simulated-ai-chat-panel-that-responds-to-typed-questions-about-the-student-using-pre-scripted-intelligent-responses-2-a-voice-input-button-that-triggers-a-waveform-animation-and-returns-a-simulated-spoken-typed-response-3-a-growth-prediction-slider-timeline-past-present-future-with-a-3d-animated-bar-line-graph-showing-projected-skill-growth-4-an-ai-art-gallery-with-floating-framed-images-that-rearrange-with-a-smooth-physics-animation-on-hover",
+      "featureTitle": "Build the 'AI Sandbox' interactive zone with: (1) a simulated AI chat panel that responds to typed questions about the student using pre-scripted intelligent responses; (2) a voice input button that triggers a waveform animation and returns a simulated spoken/typed response; (3) a growth prediction slider (timeline: past → present → future) with a 3D animated bar/line graph showing projected skill growth; (4) an AI art gallery with floating framed images that rearrange with a smooth physics animation on hover.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/AIArtGallery.tsx",
+        "frontend/src/components/AISandbox.tsx",
+        "frontend/src/components/ChatPanel.tsx",
+        "frontend/src/components/GrowthPredictor.tsx",
+        "frontend/src/components/VoiceInput.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-the-global-impact-achievements-section-featuring-a-three-js-3d-earth-globe-with-glowing-data-pillars-rising-from-geographic-coordinates-representing-project-locations-pillar-height-corresponds-to-impact-achievement-magnitude-scrolling-into-the-section-triggers-a-zoom-in-animation-toward-the-globe-clicking-or-hovering-a-pillar-reveals-a-glassmorphism-tooltip-panel-with-project-name-description-and-animated-stat-numbers-that-count-up",
+      "featureTitle": "Create the 'Global Impact' Achievements section featuring a Three.js 3D Earth globe with glowing data pillars rising from geographic coordinates representing project locations. Pillar height corresponds to impact/achievement magnitude. Scrolling into the section triggers a zoom-in animation toward the globe. Clicking or hovering a pillar reveals a glassmorphism tooltip panel with project name, description, and animated stat numbers that count up.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/AchievementTooltip.tsx",
+        "frontend/src/components/Achievements.tsx",
+        "frontend/src/components/GlobeScene.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-connection-contact-section-where-three-js-3d-icon-objects-representing-email-linkedin-github-orbit-around-a-central-glowing-core-clicking-an-orbiting-object-opens-the-respective-contact-action-mailto-link-linkedin-url-github-url-when-the-cursor-approaches-the-center-a-contact-form-animates-into-view-with-particle-effects-suggesting-the-form-fields-assembling-from-particles-the-submit-button-has-a-magnetic-hover-effect-and-triggers-a-particle-burst-success-animation-on-click",
+      "featureTitle": "Build 'The Connection' Contact section where Three.js 3D icon objects (representing email, LinkedIn, GitHub) orbit around a central glowing core. Clicking an orbiting object opens the respective contact action (mailto link, LinkedIn URL, GitHub URL). When the cursor approaches the center, a contact form animates into view with particle effects suggesting the form fields assembling from particles. The submit button has a magnetic hover effect and triggers a particle burst success animation on click.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Contact.tsx",
+        "frontend/src/components/ContactForm.tsx",
+        "frontend/src/components/OrbitingIcons.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-global-context-aware-custom-cursor-that-replaces-the-default-system-cursor-the-cursor-morphs-between-states-default-arrow-style-orb-style-in-hero-scanning-beam-style-in-project-gallery-and-magnetic-field-style-near-magnetic-buttons-in-the-hero-section-the-cursor-leaves-a-fading-particle-trail-cursor-glow-follows-mouse-position-with-smooth-easing-all-cursor-animations-must-target-60fps-minimum",
+      "featureTitle": "Implement a global context-aware custom cursor that replaces the default system cursor. The cursor morphs between states: default arrow style, orb style (in hero), scanning beam style (in project gallery), and magnetic field style (near magnetic buttons). In the hero section the cursor leaves a fading particle trail. Cursor glow follows mouse position with smooth easing. All cursor animations must target 60fps minimum.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/CustomCursor.tsx",
+        "frontend/src/hooks/useCursorContext.ts",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-global-scroll-magic-each-section-entrance-triggers-a-unique-scroll-triggered-animation-sequence-using-intersection-observer-or-a-scroll-library-all-sections-support-three-layer-parallax-background-at-0-2x-speed-midground-at-0-5x-foreground-at-1x-section-content-fades-in-with-simultaneous-blur-removal-from-blurry-to-sharp-numeric-stat-values-counts-percentages-animate-counting-upward-from-zero-when-they-first-enter-the-viewport",
+      "featureTitle": "Implement global scroll magic: each section entrance triggers a unique scroll-triggered animation sequence using Intersection Observer or a scroll library. All sections support three-layer parallax (background at 0.2x speed, midground at 0.5x, foreground at 1x). Section content fades in with simultaneous blur removal (from blurry to sharp). Numeric stat values (counts, percentages) animate counting upward from zero when they first enter the viewport.",
+      "files": [
+        "frontend/src/components/AISandbox.tsx",
+        "frontend/src/components/Achievements.tsx",
+        "frontend/src/components/Contact.tsx",
+        "frontend/src/components/Hero.tsx",
+        "frontend/src/components/Projects.tsx",
+        "frontend/src/components/Skills.tsx",
+        "frontend/src/components/Timeline.tsx",
+        "frontend/src/hooks/useScrollAnimation.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-reduced-motion-mode-and-high-contrast-mode-toggle-when-reduced-motion-is-active-also-respecting-the-os-prefers-reduced-motion-media-query-all-particle-systems-3d-rotations-and-non-essential-animations-are-paused-or-replaced-with-simple-fade-transitions-when-high-contrast-mode-is-active-neon-gradient-colors-are-replaced-with-high-contrast-black-white-yellow-palette-and-all-glassmorphism-blur-effects-are-removed-both-toggles-must-persist-via-localstorage-and-be-accessible-from-a-floating-settings-button",
+      "featureTitle": "Add a reduced-motion mode and high-contrast mode toggle. When reduced motion is active (also respecting the OS prefers-reduced-motion media query), all particle systems, 3D rotations, and non-essential animations are paused or replaced with simple fade transitions. When high-contrast mode is active, neon gradient colors are replaced with high-contrast black/white/yellow palette and all glassmorphism blur effects are removed. Both toggles must persist via localStorage and be accessible from a floating settings button.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/AccessibilitySettings.tsx",
+        "frontend/src/components/CodeParticles.tsx",
+        "frontend/src/components/GlobeScene.tsx",
+        "frontend/src/components/HeroGrid.tsx",
+        "frontend/src/components/Preloader.tsx",
+        "frontend/src/components/SkillGlobe.tsx",
+        "frontend/src/hooks/useAccessibility.ts",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-cohesive-futuristic-visual-theme-across-the-entire-site-deep-space-black-050510-base-background-neon-cyan-00f5ff-and-electric-violet-9d00ff-as-primary-accent-colors-secondary-neon-magenta-ff00c8-for-highlights-all-interactive-cards-using-glassmorphism-frosted-semi-transparent-backgrounds-with-backdrop-filter-blur-consistent-neon-glow-box-shadows-on-interactive-elements-and-a-monospace-geometric-custom-font-pairing-for-headings-and-body-text-the-overall-aesthetic-should-evoke-minority-report-meets-apple-vision-pro",
+      "featureTitle": "Apply a cohesive futuristic visual theme across the entire site: deep space black (#050510) base background, neon cyan (#00f5ff) and electric violet (#9d00ff) as primary accent colors, secondary neon magenta (#ff00c8) for highlights, all interactive cards using glassmorphism (frosted semi-transparent backgrounds with backdrop-filter blur), consistent neon glow box-shadows on interactive elements, and a monospace/geometric custom font pairing for headings and body text. The overall aesthetic should evoke 'Minority Report meets Apple Vision Pro'.",
+      "files": [
+        "frontend/src/components/AchievementTooltip.tsx",
+        "frontend/src/components/ContactForm.tsx",
+        "frontend/src/components/FlipCard.tsx",
+        "frontend/src/components/ProjectCard.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "frontend/src/App.tsx": "Root application component that wires together all providers (Accessibility, Cursor contexts), manages the preloader state, and renders all portfolio sections in order (Hero, Timeline, Skills, Projects, AISandbox, Achievements, Contact, Footer).",
+  "frontend/src/components/SkillGlobe.tsx": "Three.js/R3F skill globe with sphere lattice of interconnected nodes; fixes the TypeScript error by replacing JSX `<line>` elements (which TypeScript resolves as SVG) with `<primitive>` wrapping proper `THREE.Line` objects via a `ConnectionLine` helper component.",
+  "frontend/src/components/Achievements.tsx": "Global Impact section displaying animated stat cards with count-up numbers, a Three.js Earth globe with glowing impact pillars, and a list of achievements with neon-styled icons.",
+  "frontend/src/components/GlobeScene.tsx": "Three.js Earth globe component with auto-rotating sphere, wireframe overlay, and glowing cylindrical impact pillars at geographic coordinates; exports the `ImpactPoint` interface for use by parent components.",
+  "frontend/src/components/AchievementTooltip.tsx": "Glassmorphism tooltip component that displays a location label and animated count-up stat number when hovering globe pillars.",
+  "frontend/src/components/OrbitingIcons.tsx": "Three.js/R3F scene with three colored cube objects orbiting a central glowing sphere, each triggering a contact action (email, GitHub, LinkedIn) on click.",
+  "frontend/src/components/ContactForm.tsx": "Contact form with particle-dissolve entrance animation, magnetic submit button, and canvas-based particle burst success animation on submission.",
+  "frontend/src/components/Contact.tsx": "The Connection section combining the OrbitingIcons 3D scene with the ContactForm, fetching contact links from student data and wiring click handlers to open email/GitHub/LinkedIn.",
+  "frontend/src/components/Footer.tsx": "Site footer with NEXUS branding, dynamic copyright year, and caffeine.ai attribution link with UTM tracking parameters."
+}

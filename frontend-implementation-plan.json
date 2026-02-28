@@ -1,0 +1,500 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "NEXUS — Futuristic Student Portfolio Website Frontend",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Implement 'The Awakening' animated preloader with WebGL/canvas particle system forming human silhouette, time-based greeting, and mouse-reactive particles",
+      "acceptanceCriteria": [
+        "Particle system animates and converges into a recognizable silhouette shape on page load",
+        "Greeting text reflects correct time-of-day salutation",
+        "Particles visibly react to mouse cursor movement",
+        "Preloader fades out smoothly when loading is complete and main content appears"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Preloader.tsx",
+          "operation": "create",
+          "description": "Create Preloader component with canvas-based particle system that forms a human silhouette. Implement mouse tracking to make particles react to cursor position. Include time-based greeting logic (morning/afternoon/evening). Handle fade-out animation on load complete."
+        },
+        {
+          "path": "frontend/src/hooks/useParticleSystem.ts",
+          "operation": "create",
+          "description": "Create custom hook managing particle physics, silhouette formation logic, mouse interaction calculations, and animation frame updates for the preloader particle system."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire Preloader component into App root. Add loading state management to control preloader visibility and trigger fade-out transition when content is ready."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Build 'Reality Shift' Hero section with Three.js infinite 3D grid, floating formulas, glassmorphism name card with fragment animation, cursor-following gradient text, magnetic CTA buttons, and three-layer parallax",
+      "acceptanceCriteria": [
+        "A Three.js scene renders a perspective grid that appears to extend infinitely toward the horizon",
+        "Mathematical formula strings float in 3D space above the grid",
+        "Hovering the name card triggers a fragment-scatter and reassembly animation",
+        "Gradient text color shifts based on cursor X/Y position",
+        "CTA buttons translate slightly toward the cursor when it approaches (magnetic effect)",
+        "Three distinct parallax layers scroll at different speeds"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Hero.tsx",
+          "operation": "create",
+          "description": "Create Hero section component orchestrating Three.js grid scene, floating formula labels, glassmorphism name card, gradient text following cursor, magnetic CTA buttons, and three-layer parallax structure. Reference generated image frontend/public/assets/generated/hero-starfield.dim_1920x1080.png as background layer. Reference generated image frontend/public/assets/generated/student-avatar.dim_400x400.png for avatar display if needed."
+        },
+        {
+          "path": "frontend/src/components/HeroGrid.tsx",
+          "operation": "create",
+          "description": "Create Three.js infinite perspective grid component using React Three Fiber. Render grid extending to horizon with floating 3D text meshes displaying mathematical formulas."
+        },
+        {
+          "path": "frontend/src/components/FragmentCard.tsx",
+          "operation": "create",
+          "description": "Create glassmorphism name card component with hover-triggered fragment/reassembly animation using Framer Motion. Apply frosted glass styling with backdrop-filter."
+        },
+        {
+          "path": "frontend/src/hooks/useCursorPosition.ts",
+          "operation": "create",
+          "description": "Create custom hook tracking global cursor position with smooth easing for gradient text and magnetic button effects."
+        },
+        {
+          "path": "frontend/src/components/MagneticButton.tsx",
+          "operation": "create",
+          "description": "Create magnetic CTA button component that translates toward cursor when nearby using transform calculations and Framer Motion spring animations."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire Hero component into App below Preloader. Ensure hero is the first visible section after preloader fade-out."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Create 'Consciousness Stream' About/Timeline section with horizontal-scrolling timeline driven by vertical scroll, 3D flip cards, color-transitioning background, and character-by-character typing with glitch effects",
+      "acceptanceCriteria": [
+        "Vertical scroll input moves the timeline horizontally",
+        "Each card performs a CSS 3D flip on hover/focus to reveal achievement details",
+        "Section background color transitions across three distinct phases (dark → light → neon) as the user scrolls through the timeline",
+        "Milestone text types in character by character when the card enters view",
+        "Designated keywords display a glitch animation (color flicker, slight offset)"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Timeline.tsx",
+          "operation": "create",
+          "description": "Create Timeline section component with vertical-to-horizontal scroll transformation. Implement background color transition logic (dark → light → neon) based on scroll progress. Fetch milestone data from backend using getStudent query."
+        },
+        {
+          "path": "frontend/src/components/FlipCard.tsx",
+          "operation": "create",
+          "description": "Create 3D flip card component using CSS transforms (rotateY). Front displays date/title, back displays achievement description. Add hover/focus trigger for flip animation."
+        },
+        {
+          "path": "frontend/src/hooks/useHorizontalScroll.ts",
+          "operation": "create",
+          "description": "Create custom hook converting vertical scroll events to horizontal timeline translation with smooth momentum easing."
+        },
+        {
+          "path": "frontend/src/components/TypewriterText.tsx",
+          "operation": "create",
+          "description": "Create typewriter text component that animates character-by-character reveal on intersection. Apply glitch effect (color shift, offset transform) to designated keyword spans."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire Timeline component into App after Hero section."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Build 'Digital Nexus' Skills section with Three.js 3D rotating globe of interconnected skill nodes, hover-highlight connections, floating badges with shader glow, and code-particle background",
+      "acceptanceCriteria": [
+        "A Three.js sphere lattice of nodes auto-rotates and is mouse-draggable",
+        "Hovering a node highlights connecting lines to related skill nodes",
+        "Skill badge labels float near each node with a glow/shader effect",
+        "Animated background particles display short code-like characters"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Skills.tsx",
+          "operation": "create",
+          "description": "Create Skills section component orchestrating Three.js skill globe scene and code-particle background. Fetch skills data from backend using getStudent query. Reference generated image frontend/public/assets/generated/hex-grid-overlay.dim_1024x1024.png as optional texture overlay."
+        },
+        {
+          "path": "frontend/src/components/SkillGlobe.tsx",
+          "operation": "create",
+          "description": "Create Three.js skill globe component using React Three Fiber. Render sphere lattice of interconnected nodes with auto-rotation and mouse drag controls. Implement hover detection to highlight node connections with animated lines. Display floating skill badge labels with shader material glow effect."
+        },
+        {
+          "path": "frontend/src/components/CodeParticles.tsx",
+          "operation": "create",
+          "description": "Create animated background particle field where each particle displays a short code snippet character using canvas or CSS sprites."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire Skills component into App after Timeline section."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Implement 'The Lab' Projects Gallery with 3D perspective cards, scroll-triggered rotation with inertia, holographic hover preview, expand-morph transition, dynamic background color shift, and scanning beam cursor",
+      "acceptanceCriteria": [
+        "Project cards are displayed in a 3D perspective grid and rotate on scroll with smooth inertia",
+        "Hovering a card shows a holographic animated wireframe/preview overlay",
+        "Clicking a card animates it expanding to fill the screen with full project detail content",
+        "Section background transitions between project accent colors based on scroll position",
+        "Cursor renders as a scanning horizontal beam style when over project cards"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Projects.tsx",
+          "operation": "create",
+          "description": "Create Projects Gallery section component with 3D perspective card grid. Implement scroll-based card rotation with inertia easing. Track centered card to drive background color transitions. Fetch projects data from backend using getStudent query."
+        },
+        {
+          "path": "frontend/src/components/ProjectCard.tsx",
+          "operation": "create",
+          "description": "Create 3D project card component with holographic preview overlay on hover (animated wireframe or mockup). Handle click to trigger expand-morph transition using Framer Motion layout animations."
+        },
+        {
+          "path": "frontend/src/components/ProjectDetail.tsx",
+          "operation": "create",
+          "description": "Create full-screen project detail view rendered when a card is expanded. Include close action to morph back to card grid."
+        },
+        {
+          "path": "frontend/src/hooks/useScrollInertia.ts",
+          "operation": "create",
+          "description": "Create custom hook calculating scroll-driven rotation with inertia easing for project cards."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire Projects component into App after Skills section. Ensure ProjectDetail route/modal is accessible when card is clicked."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Build 'AI Sandbox' interactive zone with simulated chat panel, voice input with waveform animation, growth prediction slider with 3D graph, and physics-animated AI art gallery",
+      "acceptanceCriteria": [
+        "Chat panel accepts user text input and returns pre-scripted responses about the student",
+        "Voice button activates an animated waveform and outputs a text response after a brief delay",
+        "Growth prediction slider controls a 3D bar/line chart that animates between past, present, and future states",
+        "Art gallery frames float with subtle idle animation and smoothly rearrange layout on hover"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/AISandbox.tsx",
+          "operation": "create",
+          "description": "Create AI Sandbox section component orchestrating chat panel, voice input, growth prediction slider, and AI art gallery sub-components. Reference generated image frontend/public/assets/generated/ai-assistant-silhouette.dim_512x512.png for AI chat avatar. Reference generated image frontend/public/assets/generated/ai-art-gallery-strip.dim_1600x400.png for art gallery content."
+        },
+        {
+          "path": "frontend/src/components/ChatPanel.tsx",
+          "operation": "create",
+          "description": "Create simulated AI chat panel component with text input, message history display, and pre-scripted response logic based on keyword matching about the student."
+        },
+        {
+          "path": "frontend/src/components/VoiceInput.tsx",
+          "operation": "create",
+          "description": "Create voice input button component with animated waveform visualization. Simulate voice-to-text delay and return scripted text response."
+        },
+        {
+          "path": "frontend/src/components/GrowthPredictor.tsx",
+          "operation": "create",
+          "description": "Create growth prediction slider component with Three.js 3D bar/line chart visualization. Animate chart data transitions between past, present, and future timeline positions."
+        },
+        {
+          "path": "frontend/src/components/AIArtGallery.tsx",
+          "operation": "create",
+          "description": "Create AI art gallery component with floating framed images. Implement physics-based rearrangement animation on hover using Framer Motion or spring physics. Use image strip frontend/public/assets/generated/ai-art-gallery-strip.dim_1600x400.png sliced into individual frames."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire AISandbox component into App after Projects section."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Create 'Global Impact' Achievements section with Three.js 3D Earth globe, glowing data pillars at geographic coordinates, scroll-triggered zoom animation, and glassmorphism tooltip with count-up stats",
+      "acceptanceCriteria": [
+        "A Three.js Earth sphere renders with a dark/neon texture",
+        "Glowing vertical pillars rise from at least 5 hardcoded geographic coordinates",
+        "Pillar heights are proportional to a configurable impact value",
+        "Scroll-triggered animation zooms the camera toward the globe on section entry",
+        "Hovering/clicking a pillar shows a glassmorphism panel with stat numbers that animate counting up"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Achievements.tsx",
+          "operation": "create",
+          "description": "Create Achievements section component with Three.js Earth globe scene. Implement scroll-triggered camera zoom animation on section intersection. Fetch achievements data from backend using getStudent query. Reference generated image frontend/public/assets/generated/earth-neon-texture.dim_2048x1024.png as Earth sphere texture map."
+        },
+        {
+          "path": "frontend/src/components/GlobeScene.tsx",
+          "operation": "create",
+          "description": "Create Three.js Earth globe component using React Three Fiber with neon texture material. Render glowing vertical pillar geometries at hardcoded lat/lng coordinates with heights proportional to impact values. Implement pillar hover/click detection."
+        },
+        {
+          "path": "frontend/src/components/AchievementTooltip.tsx",
+          "operation": "create",
+          "description": "Create glassmorphism tooltip component displaying project name, description, and animated count-up stat numbers. Position tooltip near hovered pillar in 3D space."
+        },
+        {
+          "path": "frontend/src/hooks/useCountUp.ts",
+          "operation": "create",
+          "description": "Create custom hook animating numeric values counting up from zero to target value with easing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire Achievements component into App after AISandbox section."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Build 'The Connection' Contact section with Three.js orbiting 3D contact icons, particle-assembled contact form, magnetic submit button, and particle burst success animation",
+      "acceptanceCriteria": [
+        "Three 3D icon objects orbit a central glowing sphere in a Three.js scene",
+        "Clicking email object triggers mailto, LinkedIn opens LinkedIn URL, GitHub opens GitHub URL",
+        "A contact form fades/assembles into view with a particle-dissolve-in animation",
+        "Submit button has magnetic lean-toward-cursor behavior",
+        "Successful form submission triggers a particle burst / success animation"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Contact.tsx",
+          "operation": "create",
+          "description": "Create Contact section component orchestrating Three.js orbiting icons scene and contact form. Fetch contact links from backend using getStudent query."
+        },
+        {
+          "path": "frontend/src/components/OrbitingIcons.tsx",
+          "operation": "create",
+          "description": "Create Three.js scene with 3D icon objects (email, LinkedIn, GitHub) orbiting a central glowing sphere using React Three Fiber. Implement click handlers opening mailto link for email, external URLs for LinkedIn and GitHub."
+        },
+        {
+          "path": "frontend/src/components/ContactForm.tsx",
+          "operation": "create",
+          "description": "Create contact form component with particle-dissolve-in entrance animation. Include magnetic submit button (reuse MagneticButton component). Trigger particle burst success animation on form submit using canvas particle effect."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire Contact component into App after Achievements section."
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Implement global context-aware custom cursor morphing between states (arrow, orb, scanning beam, magnetic field), particle trail in hero, smooth glow following, and 60fps performance",
+      "acceptanceCriteria": [
+        "Default system cursor is hidden globally",
+        "Custom cursor element is visible and follows mouse with smooth easing",
+        "Cursor visual changes based on the current section/context (at minimum: default, orb, beam, magnetic)",
+        "A fading trail of small particles follows the cursor in the Hero section",
+        "Cursor renders smoothly without jank at 60fps"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/CustomCursor.tsx",
+          "operation": "create",
+          "description": "Create global custom cursor component morphing between states based on context (default arrow, orb in hero, scanning beam in projects, magnetic field near buttons). Implement particle trail effect for hero section. Use smooth easing for cursor movement and glow effects."
+        },
+        {
+          "path": "frontend/src/hooks/useCursorContext.ts",
+          "operation": "create",
+          "description": "Create custom hook and context provider tracking current cursor state based on hovered section/element. Provide cursor state to CustomCursor component."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wrap App content with cursor context provider. Render CustomCursor component at root level above all sections."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add global CSS rule hiding default system cursor (cursor: none on body and interactive elements)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Implement global scroll magic with unique scroll-triggered animations per section, three-layer parallax, fade-in with blur removal, and count-up numbers on viewport entry",
+      "acceptanceCriteria": [
+        "Each major section has at least one distinct entrance animation triggered by scroll",
+        "Three parallax layers scroll at visually distinct speeds within sections that support it",
+        "Section content transitions from opacity 0 + blur to opacity 1 + no blur on enter",
+        "All numeric values on screen count up from 0 to their target value the first time they enter the viewport"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useScrollAnimation.ts",
+          "operation": "create",
+          "description": "Create custom hook using Intersection Observer to trigger unique entrance animations per section. Return intersection state and progress values for parallax and animation control."
+        },
+        {
+          "path": "frontend/src/components/ParallaxLayer.tsx",
+          "operation": "create",
+          "description": "Create parallax layer wrapper component supporting configurable scroll speed multipliers (0.2x background, 0.5x midground, 1x foreground). Apply transform based on scroll position."
+        },
+        {
+          "path": "frontend/src/components/FadeBlurIn.tsx",
+          "operation": "create",
+          "description": "Create wrapper component animating content from opacity 0 + blur filter to opacity 1 + no blur on intersection using Framer Motion or CSS transitions."
+        },
+        {
+          "path": "frontend/src/components/Hero.tsx",
+          "operation": "modify",
+          "description": "Wrap Hero content layers with ParallaxLayer components at different speeds. Apply FadeBlurIn to main content elements."
+        },
+        {
+          "path": "frontend/src/components/Timeline.tsx",
+          "operation": "modify",
+          "description": "Add scroll-triggered entrance animation using useScrollAnimation hook. Wrap content in FadeBlurIn."
+        },
+        {
+          "path": "frontend/src/components/Skills.tsx",
+          "operation": "modify",
+          "description": "Add scroll-triggered entrance animation. Wrap layers in ParallaxLayer components."
+        },
+        {
+          "path": "frontend/src/components/Projects.tsx",
+          "operation": "modify",
+          "description": "Add scroll-triggered entrance animation and FadeBlurIn wrapper."
+        },
+        {
+          "path": "frontend/src/components/AISandbox.tsx",
+          "operation": "modify",
+          "description": "Add scroll-triggered entrance animation using useScrollAnimation."
+        },
+        {
+          "path": "frontend/src/components/Achievements.tsx",
+          "operation": "modify",
+          "description": "Add scroll-triggered zoom animation on intersection. Apply count-up animation to stat numbers using useCountUp hook."
+        },
+        {
+          "path": "frontend/src/components/Contact.tsx",
+          "operation": "modify",
+          "description": "Add scroll-triggered entrance animation using useScrollAnimation hook."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Add reduced-motion mode and high-contrast mode toggles with localStorage persistence, OS prefers-reduced-motion respect, and accessible floating settings button",
+      "acceptanceCriteria": [
+        "A floating accessibility settings button is visible across all sections",
+        "Toggling reduced motion pauses particle systems, 3D auto-rotations, and replaces complex animations with simple fades",
+        "OS-level prefers-reduced-motion is automatically respected on first load",
+        "Toggling high contrast switches the color palette to high-contrast values and removes glassmorphism blur",
+        "Both preferences are saved to localStorage and restored on page reload"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/AccessibilitySettings.tsx",
+          "operation": "create",
+          "description": "Create floating accessibility settings button component with toggle controls for reduced motion and high contrast modes. Sync settings to localStorage."
+        },
+        {
+          "path": "frontend/src/hooks/useAccessibility.ts",
+          "operation": "create",
+          "description": "Create custom hook and context provider managing reduced motion and high contrast states. Detect OS prefers-reduced-motion on mount. Persist preferences to localStorage. Provide state to all components."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wrap App with accessibility context provider. Render AccessibilitySettings component as floating button."
+        },
+        {
+          "path": "frontend/src/components/Preloader.tsx",
+          "operation": "modify",
+          "description": "Check reduced motion state. If active, replace particle system with simple fade animation."
+        },
+        {
+          "path": "frontend/src/components/HeroGrid.tsx",
+          "operation": "modify",
+          "description": "Check reduced motion state. If active, pause 3D grid rotation and formula animations."
+        },
+        {
+          "path": "frontend/src/components/SkillGlobe.tsx",
+          "operation": "modify",
+          "description": "Check reduced motion state. If active, pause globe auto-rotation."
+        },
+        {
+          "path": "frontend/src/components/GlobeScene.tsx",
+          "operation": "modify",
+          "description": "Check reduced motion state. If active, disable camera zoom animation."
+        },
+        {
+          "path": "frontend/src/components/CodeParticles.tsx",
+          "operation": "modify",
+          "description": "Check reduced motion state. If active, pause particle animation."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add CSS custom properties for high-contrast color palette (black, white, yellow). Add data attribute selectors applying high-contrast palette and removing backdrop-filter blur when high contrast mode is active."
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "Apply cohesive futuristic visual theme with deep space black base, neon cyan/violet/magenta accents, glassmorphism cards, neon glow shadows, and geometric/monospace font pairing",
+      "acceptanceCriteria": [
+        "Base page background is deep near-black (#050510 or equivalent)",
+        "Neon cyan and electric violet are used consistently as primary accent colors for borders, glows, and highlights",
+        "All card components use glassmorphism styling with backdrop-filter blur",
+        "Interactive elements have neon glow box-shadows on hover/focus",
+        "A geometric/monospace font is applied to headings and body text consistently across all sections"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define global CSS custom properties for futuristic color palette: --color-base: #050510 (deep space black), --color-cyan: #00f5ff (neon cyan), --color-violet: #9d00ff (electric violet), --color-magenta: #ff00c8 (neon magenta). Apply base background color to body. Import and apply geometric/monospace font families for headings and body text. Define reusable glassmorphism and neon-glow utility classes."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme with custom color palette (base, cyan, violet, magenta). Add custom box-shadow utilities for neon glow effects. Configure font families for geometric headings and monospace body text."
+        },
+        {
+          "path": "frontend/src/components/FragmentCard.tsx",
+          "operation": "modify",
+          "description": "Apply glassmorphism styling (semi-transparent background, backdrop-filter blur, neon border). Add neon glow box-shadow on hover."
+        },
+        {
+          "path": "frontend/src/components/FlipCard.tsx",
+          "operation": "modify",
+          "description": "Apply glassmorphism styling to card faces. Add neon glow box-shadow on hover/focus."
+        },
+        {
+          "path": "frontend/src/components/ProjectCard.tsx",
+          "operation": "modify",
+          "description": "Apply glassmorphism styling and neon glow effects consistent with theme."
+        },
+        {
+          "path": "frontend/src/components/AchievementTooltip.tsx",
+          "operation": "modify",
+          "description": "Apply glassmorphism styling with backdrop-filter blur and neon accents."
+        },
+        {
+          "path": "frontend/src/components/ContactForm.tsx",
+          "operation": "modify",
+          "description": "Style form inputs and submit button with glassmorphism and neon glow effects matching theme."
+        }
+      ]
+    }
+  ]
+}

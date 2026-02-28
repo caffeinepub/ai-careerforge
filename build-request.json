@@ -1,0 +1,325 @@
+{
+  "kind": "build_request",
+  "title": "NEXUS — Futuristic Student Portfolio Website",
+  "projectName": "NEXUS Portfolio",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Implement an animated preloader ('The Awakening') with a WebGL/canvas particle system that assembles into a human silhouette shape, followed by a fade-out reveal. After loading completes, display a greeting message that changes based on the time of day (e.g., 'Good morning', 'Good evening'). Particles must respond to mouse movement during the preloader phase.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "Create a mind-bending loading animation where particles form the student's silhouette",
+          "Implement WebGL particle system that responds to mouse movement"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Particle system animates and converges into a recognizable silhouette shape on page load",
+        "Greeting text reflects correct time-of-day salutation",
+        "Particles visibly react to mouse cursor movement",
+        "Preloader fades out smoothly when loading is complete and main content appears"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Build the Hero section ('Reality Shift') with a Three.js infinite 3D perspective grid extending to the horizon, floating semi-transparent mathematical formula labels in 3D space, a glassmorphism card displaying the student's name that visually fragments and reassembles on hover, animated gradient text that follows cursor position, magnetic CTA buttons that visually lean toward the cursor, and three parallax depth layers (deep space background, floating 3D objects, foreground text content).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "Background: Infinite 3D grid extending into horizon with floating mathematical formulas (Three.js)",
+          "Glassmorphism card with the student's name that fragments/reassembles on hover",
+          "Magnetic buttons that pull toward cursor like gravity wells",
+          "Parallax layers: Deep space background → floating 3D objects → text content"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A Three.js scene renders a perspective grid that appears to extend infinitely toward the horizon",
+        "Mathematical formula strings float in 3D space above the grid",
+        "Hovering the name card triggers a fragment-scatter and reassembly animation",
+        "Gradient text color shifts based on cursor X/Y position",
+        "CTA buttons translate slightly toward the cursor when it approaches (magnetic effect)",
+        "Three distinct parallax layers scroll at different speeds"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Create the 'Consciousness Stream' About/Timeline section with a horizontally-scrolling timeline driven by vertical scroll input (via smooth scroll). Each milestone is a 3D flip card (front: date and title; back: achievement detail). Background hue transitions from dark/deep space through neutral light to neon as the user progresses. Key words in milestone text animate in character-by-character with a digital glitch effect on highlighted keywords.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "Vertical timeline that scrolls horizontally (Lenis smooth scroll)",
+          "Each milestone is a 3D card that flips to reveal achievements",
+          "Background transitions from dark → light → neon as user progresses past→present→future",
+          "Text appears character-by-character with glitch effects on key words"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Vertical scroll input moves the timeline horizontally",
+        "Each card performs a CSS 3D flip on hover/focus to reveal achievement details",
+        "Section background color transitions across three distinct phases (dark → light → neon) as the user scrolls through the timeline",
+        "Milestone text types in character by character when the card enters view",
+        "Designated keywords display a glitch animation (color flicker, slight offset)"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Build the 'Digital Nexus' Skills section featuring a Three.js 3D rotating globe composed of interconnected skill nodes. Hovering a node highlights its connections to related skill nodes with animated lines. Each node is labeled with a skill name and displays a floating badge with a WebGL/shader-style glow effect. The section background contains an animated particle field where each particle visually resembles a short code snippet or character.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "3D rotating globe made of interconnected nodes (Three.js)",
+          "Each node represents a skill - hover to see connections to other skills",
+          "Floating skill badges with WebGL shader effects",
+          "Interactive particle background where particles = lines of code"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A Three.js sphere lattice of nodes auto-rotates and is mouse-draggable",
+        "Hovering a node highlights connecting lines to related skill nodes",
+        "Skill badge labels float near each node with a glow/shader effect",
+        "Animated background particles display short code-like characters"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Implement 'The Lab' Projects Gallery with project cards rendered in a 3D perspective space. Cards tilt/rotate as the user scrolls, with inertia easing. Hovering a card shows a holographic-style animated preview overlay (simulated 3D wireframe or animated mockup). Clicking a card triggers an expand morph transition where the card grows to fill the viewport revealing full project details. The section background color shifts dynamically based on which project card is closest to center. The cursor changes to a scanning beam style when hovering over project cards.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "Project cards that exist in 3D space with depth and reflection",
+          "Cards rotate on scroll with inertia effect",
+          "Each card projects a 'holographic preview' when hovered",
+          "Click triggers page morph transition (card expands into full project view)",
+          "Background shifts color based on which project card is centered",
+          "Cursor becomes interactive beam that scans project details"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Project cards are displayed in a 3D perspective grid and rotate on scroll with smooth inertia",
+        "Hovering a card shows a holographic animated wireframe/preview overlay",
+        "Clicking a card animates it expanding to fill the screen with full project detail content",
+        "Section background transitions between project accent colors based on scroll position",
+        "Cursor renders as a scanning horizontal beam style when over project cards"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Build the 'AI Sandbox' interactive zone with: (1) a simulated AI chat panel that responds to typed questions about the student using pre-scripted intelligent responses; (2) a voice input button that triggers a waveform animation and returns a simulated spoken/typed response; (3) a growth prediction slider (timeline: past → present → future) with a 3D animated bar/line graph showing projected skill growth; (4) an AI art gallery with floating framed images that rearrange with a smooth physics animation on hover.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "Embedded live AI chat (simulated or real API) that answers questions about the student",
+          "Voice interaction button - speak a question, get animated response",
+          "Prediction simulator: Slider to see student's projected growth (past→present→future) with 3D graph visualization",
+          "AI art gallery: Floating frames displaying AI-generated art that rearrange on hover"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Chat panel accepts user text input and returns pre-scripted responses about the student",
+        "Voice button activates an animated waveform and outputs a text response after a brief delay",
+        "Growth prediction slider controls a 3D bar/line chart that animates between past, present, and future states",
+        "Art gallery frames float with subtle idle animation and smoothly rearrange layout on hover"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Create the 'Global Impact' Achievements section featuring a Three.js 3D Earth globe with glowing data pillars rising from geographic coordinates representing project locations. Pillar height corresponds to impact/achievement magnitude. Scrolling into the section triggers a zoom-in animation toward the globe. Clicking or hovering a pillar reveals a glassmorphism tooltip panel with project name, description, and animated stat numbers that count up.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "3D globe showing project locations worldwide",
+          "Data points rise from locations as glowing pillars (height = impact)",
+          "Scroll to zoom into specific regions with project details",
+          "Glassmorphism panels with real-time stats"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A Three.js Earth sphere renders with a dark/neon texture",
+        "Glowing vertical pillars rise from at least 5 hardcoded geographic coordinates",
+        "Pillar heights are proportional to a configurable impact value",
+        "Scroll-triggered animation zooms the camera toward the globe on section entry",
+        "Hovering/clicking a pillar shows a glassmorphism panel with stat numbers that animate counting up"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Build 'The Connection' Contact section where Three.js 3D icon objects (representing email, LinkedIn, GitHub) orbit around a central glowing core. Clicking an orbiting object opens the respective contact action (mailto link, LinkedIn URL, GitHub URL). When the cursor approaches the center, a contact form animates into view with particle effects suggesting the form fields assembling from particles. The submit button has a magnetic hover effect and triggers a particle burst success animation on click.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "Interactive 3D objects representing contact methods (email, LinkedIn, GitHub)",
+          "Objects orbit around a central core, click to send message",
+          "Particle system forms into contact form fields when near",
+          "Magnetic, glowing send button with success animation"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Three 3D icon objects orbit a central glowing sphere in a Three.js scene",
+        "Clicking email object triggers mailto, LinkedIn opens LinkedIn URL, GitHub opens GitHub URL",
+        "A contact form fades/assembles into view with a particle-dissolve-in animation",
+        "Submit button has magnetic lean-toward-cursor behavior",
+        "Successful form submission triggers a particle burst / success animation"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Implement a global context-aware custom cursor that replaces the default system cursor. The cursor morphs between states: default arrow style, orb style (in hero), scanning beam style (in project gallery), and magnetic field style (near magnetic buttons). In the hero section the cursor leaves a fading particle trail. Cursor glow follows mouse position with smooth easing. All cursor animations must target 60fps minimum.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "Custom cursor that transforms based on context (arrow → orb → beam → magnetic field)",
+          "Cursor leaves particle trails in hero section",
+          "3D objects rotate toward cursor with smooth easing",
+          "Glow effects follow mouse with 120fps performance"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Default system cursor is hidden globally",
+        "Custom cursor element is visible and follows mouse with smooth easing",
+        "Cursor visual changes based on the current section/context (at minimum: default, orb, beam, magnetic)",
+        "A fading trail of small particles follows the cursor in the Hero section",
+        "Cursor renders smoothly without jank at 60fps"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Implement global scroll magic: each section entrance triggers a unique scroll-triggered animation sequence using Intersection Observer or a scroll library. All sections support three-layer parallax (background at 0.2x speed, midground at 0.5x, foreground at 1x). Section content fades in with simultaneous blur removal (from blurry to sharp). Numeric stat values (counts, percentages) animate counting upward from zero when they first enter the viewport.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "Each section has unique scroll-triggered animation sequence",
+          "Parallax at 3 different speeds (background, mid-ground, foreground)",
+          "Content fades in with blur removal effect",
+          "Numbers count up when in viewport"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Each major section has at least one distinct entrance animation triggered by scroll",
+        "Three parallax layers scroll at visually distinct speeds within sections that support it",
+        "Section content transitions from opacity 0 + blur to opacity 1 + no blur on enter",
+        "All numeric values on screen count up from 0 to their target value the first time they enter the viewport"
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Add a reduced-motion mode and high-contrast mode toggle. When reduced motion is active (also respecting the OS prefers-reduced-motion media query), all particle systems, 3D rotations, and non-essential animations are paused or replaced with simple fade transitions. When high-contrast mode is active, neon gradient colors are replaced with high-contrast black/white/yellow palette and all glassmorphism blur effects are removed. Both toggles must persist via localStorage and be accessible from a floating settings button.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "High contrast mode toggle",
+          "Reduced motion preference respected"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A floating accessibility settings button is visible across all sections",
+        "Toggling reduced motion pauses particle systems, 3D auto-rotations, and replaces complex animations with simple fades",
+        "OS-level prefers-reduced-motion is automatically respected on first load",
+        "Toggling high contrast switches the color palette to high-contrast values and removes glassmorphism blur",
+        "Both preferences are saved to localStorage and restored on page reload"
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Apply a cohesive futuristic visual theme across the entire site: deep space black (#050510) base background, neon cyan (#00f5ff) and electric violet (#9d00ff) as primary accent colors, secondary neon magenta (#ff00c8) for highlights, all interactive cards using glassmorphism (frosted semi-transparent backgrounds with backdrop-filter blur), consistent neon glow box-shadows on interactive elements, and a monospace/geometric custom font pairing for headings and body text. The overall aesthetic should evoke 'Minority Report meets Apple Vision Pro'.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "This portfolio should feel like stepping into 2070",
+          "Minority Report meets Apple Vision Pro",
+          "neon glassmorphism aesthetics throughout"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Base page background is deep near-black (#050510 or equivalent)",
+        "Neon cyan and electric violet are used consistently as primary accent colors for borders, glows, and highlights",
+        "All card components use glassmorphism styling with backdrop-filter blur",
+        "Interactive elements have neon glow box-shadows on hover/focus",
+        "A geometric/monospace font is applied to headings and body text consistently across all sections"
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Store student portfolio data (name, bio, timeline milestones, skills list, projects, achievements, contact links) in the Motoko backend as stable actor state. Expose query functions to read this data so the frontend can fetch and render it dynamically. This enables future editing without redeploying the frontend.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "A futuristic AI-powered portfolio that tells the story of a student's journey"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Motoko actor stores at minimum: student name, tagline, timeline milestones array, skills array, projects array, achievements array, and contact links",
+        "Query functions return each data category as structured types",
+        "Frontend fetches and renders data from the backend rather than using only hardcoded values"
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not use Next.js — the platform uses React with Vite. Apply the same architectural goals within the React + Tailwind stack.",
+    "Do not use GSAP if it conflicts with the available build environment; use Framer Motion and CSS animations as the primary animation engine.",
+    "Do not integrate real external AI APIs (OpenAI, DALL-E, etc.) — simulate all AI interactions with scripted/local responses.",
+    "Do not use Spline embeds that require external CDN iframes if they break CSP — use Three.js + React Three Fiber for all 3D.",
+    "All static image assets must be served from frontend/public/assets/generated.",
+    "Do not edit files under frontend/src/hooks/ or frontend/src/components/ui/."
+  ],
+  "nonGoals": [
+    "Real AI/LLM API integration (OpenAI, Anthropic, etc.)",
+    "Real voice speech recognition beyond a simulated waveform animation",
+    "Real-time WebSocket or live data features",
+    "Backend authentication or user accounts (this is a public portfolio)",
+    "PDF/DOCX generation or download",
+    "Email sending from the contact form (link to mailto only)",
+    "Mobile-native or PWA features",
+    "Sound/audio playback (scoped out to avoid autoplay policy issues)"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Deep space starfield with subtle cyan and violet nebula clouds, ultra-wide horizontal banner (hero-starfield.dim_1920x1080.png)",
+      "Abstract holographic AI face silhouette rendered in neon cyan lines on black background (ai-assistant-silhouette.dim_512x512.png)",
+      "Futuristic hexagonal grid texture overlay with neon glow edges on dark background (hex-grid-overlay.dim_1024x1024.png)",
+      "Collection of 4 AI-generated abstract art pieces in neon glitch aesthetic for AI art gallery, arranged as a horizontal strip (ai-art-gallery-strip.dim_1600x400.png)",
+      "Dark Earth globe texture map with neon city light dots for Three.js globe material (earth-neon-texture.dim_2048x1024.png)",
+      "Student avatar/portrait placeholder rendered as a geometric low-poly neon silhouette on dark background (student-avatar.dim_400x400.png)"
+    ],
+    "edits": []
+  }
+}

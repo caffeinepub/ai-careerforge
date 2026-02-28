@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    /* Futuristic NEXUS palette */
+    --background: 0.08 0.02 265;
+    --foreground: 0.95 0.02 200;
+    --card: 0.12 0.03 265;
+    --card-foreground: 0.95 0.02 200;
+    --popover: 0.12 0.03 265;
+    --popover-foreground: 0.95 0.02 200;
+    --primary: 0.85 0.18 195;
+    --primary-foreground: 0.05 0.02 265;
+    --secondary: 0.15 0.04 265;
+    --secondary-foreground: 0.85 0.18 195;
+    --muted: 0.15 0.03 265;
+    --muted-foreground: 0.55 0.06 265;
+    --accent: 0.65 0.28 295;
+    --accent-foreground: 0.95 0.02 200;
+    --destructive: 0.65 0.25 25;
+    --destructive-foreground: 0.95 0.02 200;
+    --border: 0.25 0.06 265;
+    --input: 0.18 0.04 265;
+    --ring: 0.85 0.18 195;
+    --chart-1: 0.85 0.18 195;
+    --chart-2: 0.65 0.28 295;
+    --chart-3: 0.75 0.25 330;
+    --chart-4: 0.85 0.22 145;
+    --chart-5: 0.75 0.20 60;
+    --sidebar: 0.10 0.03 265;
+    --sidebar-foreground: 0.95 0.02 200;
+    --sidebar-primary: 0.85 0.18 195;
+    --sidebar-primary-foreground: 0.05 0.02 265;
+    --sidebar-accent: 0.15 0.04 265;
+    --sidebar-accent-foreground: 0.85 0.18 195;
+    --sidebar-border: 0.25 0.06 265;
+    --sidebar-ring: 0.85 0.18 195;
+
+    /* Neon accent raw values */
+    --neon-cyan: oklch(0.85 0.18 195);
+    --neon-violet: oklch(0.65 0.28 295);
+    --neon-magenta: oklch(0.70 0.28 330);
+    --neon-green: oklch(0.80 0.22 145);
+    --space-black: #050510;
+    --glass-bg: rgba(5, 5, 20, 0.6);
+    --glass-border: rgba(0, 245, 255, 0.15);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background-color: #050510;
+    font-family: 'Space Mono', monospace;
+    overflow-x: hidden;
+  }
+
+  /* Hide default cursor globally */
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+
+  /* High contrast mode */
+  [data-high-contrast="true"] {
+    --background: 0 0 0;
+    --foreground: 1 0 0;
+    --primary: 0.95 0.22 95;
+    --border: 0.8 0 0;
+    --neon-cyan: oklch(0.95 0.22 95);
+    --neon-violet: oklch(1 0 0);
+    --glass-bg: rgba(0, 0, 0, 0.95);
+    --glass-border: rgba(255, 255, 255, 0.8);
+  }
+
+  [data-high-contrast="true"] .glass-card {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(0, 0, 0, 0.95) !important;
+    border: 2px solid white !important;
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  [data-reduced-motion="true"] *, [data-reduced-motion="true"] *::before, [data-reduced-motion="true"] *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+  }
+
+  .neon-glow-cyan {
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.4), 0 0 40px rgba(0, 245, 255, 0.2), inset 0 0 20px rgba(0, 245, 255, 0.05);
+  }
+
+  .neon-glow-violet {
+    box-shadow: 0 0 20px rgba(157, 0, 255, 0.4), 0 0 40px rgba(157, 0, 255, 0.2), inset 0 0 20px rgba(157, 0, 255, 0.05);
+  }
+
+  .neon-glow-magenta {
+    box-shadow: 0 0 20px rgba(255, 0, 200, 0.4), 0 0 40px rgba(255, 0, 200, 0.2);
+  }
+
+  .neon-text-cyan {
+    color: #00f5ff;
+    text-shadow: 0 0 10px rgba(0, 245, 255, 0.8), 0 0 20px rgba(0, 245, 255, 0.4);
+  }
+
+  .neon-text-violet {
+    color: #9d00ff;
+    text-shadow: 0 0 10px rgba(157, 0, 255, 0.8), 0 0 20px rgba(157, 0, 255, 0.4);
+  }
+
+  .neon-text-magenta {
+    color: #ff00c8;
+    text-shadow: 0 0 10px rgba(255, 0, 200, 0.8), 0 0 20px rgba(255, 0, 200, 0.4);
+  }
+
+  .font-orbitron {
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  .font-mono-space {
+    font-family: 'Space Mono', monospace;
+  }
+
+  .section-fade-in {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, filter 0.8s ease, transform 0.8s ease;
+  }
+
+  .section-fade-in.visible {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0);
+  }
+
+  .glitch-text {
+    position: relative;
+  }
+
+  .glitch-text::before,
+  .glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .glitch-text::before {
+    color: #00f5ff;
+    animation: glitch-1 3s infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+  }
+
+  .glitch-text::after {
+    color: #ff00c8;
+    animation: glitch-2 3s infinite;
+    clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+  }
+
+  .scan-line {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scan-line::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00f5ff, transparent);
+    animation: scan 3s linear infinite;
+  }
+}
+
+@keyframes glitch-1 {
+  0%, 90%, 100% { transform: translate(0); opacity: 0; }
+  91% { transform: translate(-2px, 1px); opacity: 0.8; }
+  93% { transform: translate(2px, -1px); opacity: 0.8; }
+  95% { transform: translate(-1px, 2px); opacity: 0.8; }
+  97% { transform: translate(0); opacity: 0; }
+}
+
+@keyframes glitch-2 {
+  0%, 88%, 100% { transform: translate(0); opacity: 0; }
+  89% { transform: translate(2px, -1px); opacity: 0.8; }
+  91% { transform: translate(-2px, 1px); opacity: 0.8; }
+  93% { transform: translate(1px, -2px); opacity: 0.8; }
+  95% { transform: translate(0); opacity: 0; }
+}
+
+@keyframes scan {
+  0% { top: -2px; }
+  100% { top: 102%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 245, 255, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(0, 245, 255, 0.7), 0 0 80px rgba(0, 245, 255, 0.3); }
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+}
+
+@keyframes orbit-reverse {
+  from { transform: rotate(0deg) translateX(160px) rotate(0deg); }
+  to { transform: rotate(-360deg) translateX(160px) rotate(360deg); }
+}
+
+@keyframes particle-float {
+  0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-100px) translateX(var(--drift, 0px)); opacity: 0; }
+}
+
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes waveform {
+  0%, 100% { height: 4px; }
+  50% { height: 24px; }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes pillar-rise {
+  from { transform: scaleY(0); transform-origin: bottom; }
+  to { transform: scaleY(1); transform-origin: bottom; }
+}
+
+@keyframes particle-burst {
+  0% { transform: translate(0, 0) scale(1); opacity: 1; }
+  100% { transform: translate(var(--tx, 0), var(--ty, 0)) scale(0); opacity: 0; }
+}
+
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+.animate-spin-slow { animation: spin-slow 20s linear infinite; }
+.animate-gradient { animation: gradient-shift 4s ease infinite; background-size: 200% 200%; }
+.animate-waveform { animation: waveform 0.5s ease-in-out infinite; }
